@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>moneykeeper</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="app shadow">
+            <div class="logo">
+                <span>money</span>keeper
+            </div>
+            <div class="title">
+                Расчет дневного бюджета
+            </div>
+            <div class="main">
+                <div class="data">
+                    <div class="choose-expenses">Введите обязательные расходы</div>
+                    <div class="d-flex">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control exp-item" id="expenses_1" placeholder="Наименование" aria-describedby="basic-addon1"> 
+                        </div>
+                        <div class="input-group mb-3 pl-2">
+                            <input type="text" class="form-control exp-item" id="expenses_2" placeholder="Цена" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control exp-item" id="expenses_3" placeholder="Наименование" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3 pl-2">
+                            <input type="text" class="form-control exp-item" id="expenses_4" placeholder="Цена" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-success mt-2">Утвердить</button>
+                    </div>
+                    <div class="optionalexpenses">Введите необязательные расходы</div>
+                    <div class="d-flex">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control optexpenses-item" id="optionalexpenses_1" aria-describedby="basic-addon1"> 
+                        </div>
+                        <div class="input-group mb-3 pl-2">
+                            <input type="text" class="form-control optexpenses-item" id="optionalexpenses_2" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3 pl-2">
+                            <input type="text" class="form-control optexpenses-item" id="optionalexpenses_3" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-success mt-2">Утвердить</button>
+                    </div>
+                    <div class="count-budget">Расчет дневного бюджета</div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-success mt-2">Рассчитать</button>
+                    </div>
+                    <div class="choose-income-label">Введите статьи возможного дохода через запятую</div>
+                    <div class="d-flex">
+                        <div class="input-group mb-3 mt-3">
+                            <input type="text" class="form-control choose-inc" id="income" aria-describedby="basic-addon1"> 
+                        </div>
+                    </div>
+                    <div class="checksavings">Есть ли накопления: 
+                        <input id="savings" type="checkbox" />
+                    </div>
+                    <div class="d-flex">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control ch-sum" id="sum" placeholder="Сумма" aria-describedby="basic-addon1"> 
+                        </div>
+                        <div class="input-group mb-3 pl-2">
+                            <input type="text" class="form-control ch-percent" id="percent" placeholder="Процент" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" id="start" class="btn btn-success mt-2 btn-lg">Начать расчет</button>
+                    </div>
+                </div>
+                <div class="result">
+                    <div class="result-table shadow">
+                        <div class="budget">Доход: </div>
+                        <div class="budget-value"></div>
+                        <div class="daybudget">Бюджет на 1 день: </div>
+                        <div class="daybudget-value"></div>
+                        <div class="level">Уровень дохода: </div>
+                        <div class="level-value"></div>
+                        <div class="expenses">Обязательные расходы: </div>
+                        <div class="expenses-value"></div>
+                        <div class="optionalexpenses">Возможные траты: </div>
+                        <div class="optionalexpenses-value"></div>
+                        <div class="income">Дополнительный доход: </div>
+                        <div class="income-value"></div>
+                        <div class="monthsavings">Накопления за 1 месяц:</div>
+                        <div class="monthsavings-value"></div>
+                        <div class="yearsavings">Накопления за 1 год:</div>
+                        <div class="yearsavings-value"></div>
+                    </div>
+                    <div class="dynamic-inputs">
+                        <div class="d-flex">
+                            <div class="input-group mb-1 shadow">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-wh" id="basic-addon1">Год:</span>
+                                </div>
+                                <input type="text" class="form-control exp-item bg-wh year-val" aria-describedby="basic-addon1 " readonly> 
+                            </div>
+                            <div class="input-group mb-1 pl-1 shadow">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-wh" id="basic-addon1">Месяц:</span>
+                                </div>
+                                <input type="text" class="form-control exp-item bg-wh month-val" aria-describedby="basic-addon1" readonly>
+                            </div>
+                            <div class="input-group mb-1 pl-1 shadow">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-wh" id="basic-addon1">День:</span>
+                                </div>
+                                <input type="text" class="form-control exp-item bg-wh day-val" aria-describedby="basic-addon1" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                Made with
+                <span>️❤️</span>
+                jeniXberg
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
