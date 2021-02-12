@@ -1,0 +1,14 @@
+.winner {
+    color: green;
+}
+
+.card {
+    margin: 0 auto;
+    top: 280px;
+    width: 600px;
+}
+
+.score {
+    margin: 30px auto;
+    font-size: 50px;
+}
