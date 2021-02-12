@@ -1,0 +1,15 @@
+.header {
+    height: 60px;
+    
+    &__link {
+        display: flex;
+        margin-right: 40px;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+    &__cart {
+        width: 20px;
+        margin-right: 10px;
+    }
+}
