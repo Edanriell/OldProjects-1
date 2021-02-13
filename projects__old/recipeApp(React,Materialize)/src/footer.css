@@ -1,0 +1,7 @@
+footer {
+  margin-top: 146px;
+}
+
+.recipe-list {
+    min-height: calc(100vh - 315px);
+  }
