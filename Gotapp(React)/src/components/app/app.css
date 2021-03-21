@@ -1,0 +1,14 @@
+.app {
+    background: blue url('got.jpeg') center center no-repeat;
+    background-size: cover;
+    height: 1100px;
+}
+
+button {
+    background-color: #244252 !important;
+    border-color: #182c36 !important;
+    color: snow !important;
+}
+button:hover {
+    background-color: #182c36 !important;
+}
