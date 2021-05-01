@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="row">
+	<div class="col-md-4">
+        <h1><%= user.firstName + " " + user.lastName %></h1>
+        <img src="<%= user.avatar %>" alt="user profile image" style="height: 22rem; width: 22rem; border-radius: 100%;" class="shadow p-2 mb-4">
+        <a href="mailto:<%= user.email %>" class="btn btn-dark shadow mb-3" style="width: 100%">Send Message To <%= user.username %></a>
+        <a href="/follow/<%= user.id %>"><button class="btn btn-dark shadow mb-4" style="width: 100%">Follow <%= user.username %></button></a>
+        <div class="shadow p-3 rounded mb-4">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quasi similique architecto ad modi sunt quaerat possimus, officiis quos. Voluptatibus repellendus exercitationem, id saepe sunt consectetur non quam sapiente assumenda.
+        </div>    
+    </div>
+    
+	<div class="col-md-8">
+		<h3><%= user.username %>'s campgrounds:</h3>
+		<ul class="list-group mb-5 border border-dark">
+            <% campgrounds.forEach(function(campground) { %>
+                <li class="list-group-item list-group-item-action list-group-item-light "><a href="/campgrounds/<%= campground.id %>"><%= campground.name %></a></li>
+            <% }); %>
+		</ul>
+    </div>
+    
+</div>
+
+<% include ../partials/footer %>
